@@ -43,9 +43,8 @@ GameObject:
   - component: {fileID: 8323281350656257268}
   - component: {fileID: 9072528725184837343}
   - component: {fileID: 1710257462271338102}
-  - component: {fileID: 2552035844147051511}
-  - component: {fileID: 5308137423746537174}
-  - component: {fileID: 3669654863254778085}
+  - component: {fileID: 7340204387631719675}
+  - component: {fileID: 8318578763647323386}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -185,7 +184,34 @@ MonoBehaviour:
       m_Action: Run
       m_Flags: 0
     m_Flags: 0
---- !u!114 &2552035844147051511
+  shoot:
+    m_Name: Shoot
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b3bc0301-2263-4322-9798-4393e89bbab4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  nextWeapon:
+    m_Name: Next Weapon
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1135ba4a-adf3-44c4-96cc-a2c7bd063205
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  previousWeapon:
+    m_Name: Previous Weapon
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c4a11693-2221-4c00-be93-17d99558294d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+--- !u!114 &7340204387631719675
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,17 +220,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8323281350656257267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 874d830874d09a8448bdaf65b0f73f1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 24d3c6c52d974f54398e81ea64895c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 50
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onChangeLifeNormalized:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &5308137423746537174
+  maxSpeed: 10
+--- !u!114 &8318578763647323386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,27 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetingMode: 0
---- !u!114 &3669654863254778085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8323281350656257267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b59c3fcd1e81edf45aa49abd04fc240a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugShoot: 0
-  debugNextWeapon: 0
-  debugPreviousWeapon: 0
-  onShoot:
-    m_PersistentCalls:
-      m_Calls: []
-  onChangeWeapon:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &8323281350695844097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -319,7 +318,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8323281350695844097}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &8323281350695844099
+--- !u!95 &57477736009092981
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class WeaponController : MonoBehaviour
     WeaponBase[] weapons;
     int selectedWeaponIndex;
 
-    public UnityEvent onShoot;
+    public UnityEvent onShoot, onSwing;
     public UnityEvent<WeaponBase> onChangeWeapon;
 
     void OnValidate()
@@ -69,6 +69,22 @@ public class WeaponController : MonoBehaviour
     public void StopShooting()
     {
         ((FireWeaponBase)weapons[selectedWeaponIndex]).StopShooting();
+    }
+
+    public void Swing()
+    {
+        ((MeleeWeaponBase)weapons[selectedWeaponIndex]).Swing();
+        onSwing.Invoke();
+    }
+
+    public void OnSwingDamageStart()
+    {
+        ((MeleeWeaponBase)weapons[selectedWeaponIndex]).SwingDamageStart();
+    }
+
+    public void OnSwingDamageEnd()
+    {
+        ((MeleeWeaponBase)weapons[selectedWeaponIndex]).SwingDamageEnd();
     }
 
     public void SelectNextWeapon()

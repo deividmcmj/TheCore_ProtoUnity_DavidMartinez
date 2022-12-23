@@ -72,9 +72,9 @@ public class PlayerController : MonoBehaviour
 
         ApplyMovement(localMovement);
 
-        UpdateWeaponUse();
+        //UpdateWeaponUse();
 
-        UpdateWeaponChange();
+        //UpdateWeaponChange();
     }
 
     Vector3 ReadInputs()
