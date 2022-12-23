@@ -121,6 +121,7 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
 -r:"C:/Program Files/Unity 2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity 2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity 2021.3.9f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -333,9 +334,14 @@
 -r:"C:/Users/David/Documents/GitHub/TheCore_ProtoUnity_DavidMartinez/TheCore_ProtoUnity_DavidMartinez/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.Unsafe.dll"
 -r:"C:/Users/David/Documents/GitHub/TheCore_ProtoUnity_DavidMartinez/TheCore_ProtoUnity_DavidMartinez/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"C:/Users/David/Documents/GitHub/TheCore_ProtoUnity_DavidMartinez/TheCore_ProtoUnity_DavidMartinez/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Cinemachine.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/com.unity.cinemachine.editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/PPv2URPConverters.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.AI.Navigation.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.AI.Navigation.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Animation.Rigging.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Animation.Rigging.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Burst.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Burst.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.InputSystem.ref.dll"
@@ -374,11 +380,17 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Characters/Behaviour/Scripts/CharacterTargeting.cs"
 "Assets/Characters/Behaviour/Scripts/PlayerController.cs"
+"Assets/Characters/Behaviour/Scripts/WeaponController.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 "Assets/Weapons/Damage/Scripts/DamageableWithLife.cs"
 "Assets/Weapons/Damage/Scripts/IDamageable.cs"
 "Assets/Weapons/Damage/Scripts/InstaKillDamageable.cs"
+"Assets/Weapons/Projectiles/Scripts/KillOnCollisionEnter.cs"
+"Assets/Weapons/Projectiles/Scripts/Projectile.cs"
 "Assets/Weapons/Weapons/Scripts/FireWeaponBase.cs"
+"Assets/Weapons/Weapons/Scripts/FireWeaponByInstantiation.cs"
+"Assets/Weapons/Weapons/Scripts/FireWeaponByRaycast.cs"
+"Assets/Weapons/Weapons/Scripts/FireWeaponByRaycastAutomatic.cs"
 "Assets/Weapons/Weapons/Scripts/WeaponBase.cs"
 -langversion:9.0
 

@@ -56,14 +56,20 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponBase.cs" />
     <Compile Include="Assets\Weapons\Damage\Scripts\InstaKillDamageable.cs" />
+    <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponByRaycastAutomatic.cs" />
+    <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponByRaycast.cs" />
+    <Compile Include="Assets\Weapons\Damage\Scripts\DamageableWithLife.cs" />
     <Compile Include="Assets\Weapons\Damage\Scripts\IDamageable.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Weapons\Weapons\Scripts\WeaponBase.cs" />
     <Compile Include="Assets\Characters\Behaviour\Scripts\CharacterTargeting.cs" />
     <Compile Include="Assets\Characters\Behaviour\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Weapons\Damage\Scripts\DamageableWithLife.cs" />
-    <Compile Include="Assets\Weapons\Weapons\Scripts\WeaponBase.cs" />
-    <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponBase.cs" />
+    <Compile Include="Assets\Weapons\Projectiles\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponByInstantiation.cs" />
+    <Compile Include="Assets\Characters\Behaviour\Scripts\WeaponController.cs" />
+    <Compile Include="Assets\Weapons\Projectiles\Scripts\KillOnCollisionEnter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -329,6 +335,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity 2021.3.9f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -819,8 +828,24 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Animation.Rigging.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging">
+      <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{C2579306-5ABB-E45E-DBBA-F4ECB334B796}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

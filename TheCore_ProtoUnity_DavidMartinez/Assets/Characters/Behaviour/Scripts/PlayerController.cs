@@ -15,12 +15,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] InputAction moveLeft;
     [SerializeField] InputAction moveRight;
     [SerializeField] InputAction run;
+    [SerializeField] InputAction shoot;
+    [SerializeField] InputAction nextWeapon;
+    [SerializeField] InputAction previousWeapon;
 
     CharacterController characterController;
     float velocityMultiplier = 0.5f;
     float verticalSpeed = 0.0f;
     float gravity = -9.81f;
     Camera mainCamera;
+    bool performSingleAttack = false;
+    bool oldPerformContinuousAttack = false;
+    bool performContinuousAttack = false;
+    WeaponController weaponController;
 
     void OnEnable()
     {
@@ -29,6 +36,9 @@ public class PlayerController : MonoBehaviour
         moveLeft.Enable();
         moveRight.Enable();
         run.Enable();
+        shoot.Enable();
+        nextWeapon.Enable();
+        previousWeapon.Enable();
     }
 
     void OnDisable()
@@ -38,11 +48,15 @@ public class PlayerController : MonoBehaviour
         moveLeft.Disable();
         moveRight.Disable();
         run.Disable();
+        shoot.Disable();
+        nextWeapon.Disable();
+        previousWeapon.Disable();
     }
 
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        weaponController = GetComponent<WeaponController>();
     }
 
     // Start is called before the first frame update
@@ -57,6 +71,10 @@ public class PlayerController : MonoBehaviour
         Vector3 localMovement = ReadInputs();
 
         ApplyMovement(localMovement);
+
+        UpdateWeaponUse();
+
+        UpdateWeaponChange();
     }
 
     Vector3 ReadInputs()
@@ -82,6 +100,9 @@ public class PlayerController : MonoBehaviour
         }
         localMovement.Normalize();
 
+        performSingleAttack = shoot.triggered;
+        performContinuousAttack = shoot.IsPressed();
+
         return localMovement;
     }
 
@@ -101,6 +122,46 @@ public class PlayerController : MonoBehaviour
         if (characterController.isGrounded)
         {
             verticalSpeed = 0.0f;
+        }
+    }
+
+    private void UpdateWeaponUse()
+    {
+        if (performSingleAttack)
+        {
+            performSingleAttack = false;
+            switch (weaponController.GetCurrentWeaponUseMode())
+            {
+                case WeaponBase.UseMode.Shot:
+                    weaponController?.Shoot();
+                    break;
+            }
+        }
+
+        if (weaponController.GetCurrentWeaponUseMode() == WeaponBase.UseMode.ContinuousShot && oldPerformContinuousAttack != performContinuousAttack)
+        {
+            if (performContinuousAttack)
+            {
+                weaponController?.StartShooting();
+            }
+            else
+            {
+                weaponController?.StopShooting();
+            }
+        }
+
+        oldPerformContinuousAttack = performContinuousAttack;
+    }
+
+    private void UpdateWeaponChange()
+    {
+        if (nextWeapon.triggered)
+        {
+            weaponController.SelectNextWeapon();
+        }
+        if (previousWeapon.triggered)
+        {
+            weaponController.SelectPreviousWeapon();
         }
     }
 }

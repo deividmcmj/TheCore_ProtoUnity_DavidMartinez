@@ -20,7 +20,19 @@ public abstract class FireWeaponBase : WeaponBase
             debugShoot = false;
             Shoot();
         }
+        if (debugStartShooting)
+        {
+            debugStartShooting = false;
+            StartShooting();
+        }
+        if (debugShoot)
+        {
+            debugShoot = false;
+            StopShooting();
+        }
     }
 
     public abstract void Shoot();
+    public virtual void StartShooting() { }
+    public virtual void StopShooting() { }
 }
