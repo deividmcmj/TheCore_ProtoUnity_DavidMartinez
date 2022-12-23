@@ -375,7 +375,11 @@
 "Assets/Characters/Behaviour/Scripts/CharacterTargeting.cs"
 "Assets/Characters/Behaviour/Scripts/PlayerController.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
-"Assets/Weapons/Damage/IDamageable.cs"
+"Assets/Weapons/Damage/Scripts/DamageableWithLife.cs"
+"Assets/Weapons/Damage/Scripts/IDamageable.cs"
+"Assets/Weapons/Damage/Scripts/InstaKillDamageable.cs"
+"Assets/Weapons/Weapons/Scripts/FireWeaponBase.cs"
+"Assets/Weapons/Weapons/Scripts/WeaponBase.cs"
 -langversion:9.0
 
 /deterministic
