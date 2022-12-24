@@ -56,10 +56,22 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Utils\Transform Copy\Scripts\TransformCopy.cs" />
+    <Compile Include="Assets\Gameplay\GameOver\Scripts\GameOver.cs" />
+    <Compile Include="Assets\Weapons\Damage\Scripts\DamageCanvas.cs" />
+    <Compile Include="Assets\Characters\Behaviour\Scripts\CharacterAnimator.cs" />
     <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponByRaycastAutomatic.cs" />
     <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponByRaycast.cs" />
     <Compile Include="Assets\Weapons\Damage\Scripts\DamageableWithLife.cs" />
+    <Compile Include="Assets\Weapons\Damage\Scripts\SwingDamageEventToWeaponController.cs" />
+    <Compile Include="Assets\Characters\Behaviour\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Gameplay\EnemyWave\Scripts\EnemyWave.cs" />
+    <Compile Include="Assets\Weapons\Weapons\Scripts\MeleeWeaponBase.cs" />
+    <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponByRaycastMultishot.cs" />
+    <Compile Include="Assets\Weapons\Weapons\Scripts\MeleeWeaponByOverlap.cs" />
+    <Compile Include="Assets\Weapons\Explosions\Scripts\Explosion.cs" />
     <Compile Include="Assets\Characters\Behaviour\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Characters\Behaviour\Scripts\EnemyHit.cs" />
     <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponBase.cs" />
     <Compile Include="Assets\Weapons\Damage\Scripts\InstaKillDamageable.cs" />
     <Compile Include="Assets\Weapons\Projectiles\Scripts\KillOnCollisionEnter.cs" />
@@ -70,19 +82,7 @@
     <Compile Include="Assets\Characters\Behaviour\Scripts\WeaponController.cs" />
     <Compile Include="Assets\Weapons\Weapons\Scripts\WeaponBase.cs" />
     <Compile Include="Assets\Characters\Behaviour\Scripts\CharacterTargeting.cs" />
-    <Compile Include="Assets\Weapons\Explosions\Scripts\Explosion.cs" />
-    <Compile Include="Assets\Characters\Behaviour\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Characters\Behaviour\Scripts\CharacterAnimator.cs" />
-    <Compile Include="Assets\Gameplay\EnemyWave\Scripts\EnemyWave.cs" />
     <Compile Include="Assets\Gameplay\EnemyWave\Scripts\EnemyMultiWave.cs" />
-    <Compile Include="Assets\Weapons\Weapons\Scripts\MeleeWeaponBase.cs" />
-    <Compile Include="Assets\Weapons\Weapons\Scripts\MeleeWeaponByOverlap.cs" />
-    <Compile Include="Assets\Utils\Transform Copy\Scripts\TransformCopy.cs" />
-    <Compile Include="Assets\Weapons\Damage\Scripts\SwingDamageEventToWeaponController.cs" />
-    <Compile Include="Assets\Characters\Behaviour\Scripts\EnemyHit.cs" />
-    <Compile Include="Assets\Weapons\Damage\Scripts\DamageCanvas.cs" />
-    <Compile Include="Assets\Gameplay\GameOver\Scripts\GameOver.cs" />
-    <Compile Include="Assets\Weapons\Weapons\Scripts\FireWeaponByRaycastMultishot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

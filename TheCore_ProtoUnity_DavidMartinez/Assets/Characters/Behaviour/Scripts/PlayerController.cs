@@ -135,6 +135,9 @@ public class PlayerController : MonoBehaviour
                 case WeaponBase.UseMode.Shot:
                     weaponController?.Shoot();
                     break;
+                case WeaponBase.UseMode.Swing:
+                    weaponController?.Swing();
+                    break;
             }
         }
 
