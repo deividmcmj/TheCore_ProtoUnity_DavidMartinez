@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5674b00b75764014f9072025e06b82bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorForWeapon: {fileID: 0}
+  animatorForWeapon: {fileID: 9100000, guid: 4d785e109d6d1a94ead879d816cd1b13, type: 2}
   useMode: 0
   shootPoint: {fileID: 507658798864220608}
   debugShoot: 0
