@@ -7,7 +7,8 @@ public class DamageableWithLife : MonoBehaviour, IDamageable
 {
     [SerializeField] float life;
     [SerializeField] public UnityEvent onDeath;
-    [SerializeField] public UnityEvent<float> onChangeLifeNormalized;
+    [SerializeField] public UnityEvent<float> onChangeLifeBarNormalized;
+    [SerializeField] public UnityEvent<float, float> onChangeLifeText;
 
     bool alreadyDead = false;
     float lifeAtStart;
@@ -21,7 +22,8 @@ public class DamageableWithLife : MonoBehaviour, IDamageable
     void IDamageable.NotifyHit(float damage)
     {
         life -= damage;
-        onChangeLifeNormalized.Invoke(life / lifeAtStart);
+        onChangeLifeBarNormalized.Invoke(life / lifeAtStart);
+        onChangeLifeText.Invoke(life, lifeAtStart);
         if (life <= 0.0f)
         {
             if (!alreadyDead)

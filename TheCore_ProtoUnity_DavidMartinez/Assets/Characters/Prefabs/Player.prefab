@@ -372,6 +372,7 @@ GameObject:
   - component: {fileID: 7340204387631719675}
   - component: {fileID: 8318578763647323386}
   - component: {fileID: 5629969782653765456}
+  - component: {fileID: 5305593557164150830}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -615,6 +616,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onChangeWeapon:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5305593557164150830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8323281350656257267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 874d830874d09a8448bdaf65b0f73f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 50
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeLifeNormalized:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &8880827878995501714
