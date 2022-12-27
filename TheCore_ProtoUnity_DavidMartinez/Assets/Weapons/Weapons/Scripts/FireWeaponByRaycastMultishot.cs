@@ -12,5 +12,7 @@ public class FireWeaponByRaycastMultishot : FireWeaponByRaycast
         {
             base.Shoot();
         }
+
+        lastShotTime = Time.time;
     }
 }

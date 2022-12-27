@@ -20,6 +20,7 @@ public class FireWeaponByRaycast : FireWeaponBase
         RaycastHit hit;
         if (Physics.Raycast(shootPoint.position, horizontalSpread * verticalSpread * shootPoint.forward, out hit, range, shotLayerMask))
         {
+            Debug.DrawLine(shootPoint.position, hit.point, Color.red, 3.0f);
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             damageable?.NotifyHit(damage);
         }

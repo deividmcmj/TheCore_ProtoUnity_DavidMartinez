@@ -46,13 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d3405d6109e124b96400158f106e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorForWeapon: {fileID: 22100000, guid: 4dd885c331eedea429709ada89c8243d, type: 2}
   useMode: 0
+  animatorForWeapon: {fileID: 22100000, guid: 4dd885c331eedea429709ada89c8243d, type: 2}
   shootPoint: {fileID: 8969605274436823031}
+  coolDownBetweenShots: 10
   debugShoot: 0
   debugStartShooting: 0
   debugStopShooting: 0
   debugReload: 0
+  lastShotTime: 0
   projectilePrefab: {fileID: 2359309650611255297, guid: 14641fa0ac311a74599f438eb80bc107,
     type: 3}
 --- !u!1 &8844851156655766381

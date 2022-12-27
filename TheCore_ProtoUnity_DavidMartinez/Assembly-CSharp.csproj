@@ -84,6 +84,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Weapons\Explosions\Scripts\Explosion.cs" />
+    <Compile Include="Assets\Gameplay\WeaponsCanvas\SwordCanvas.cs" />
     <Compile Include="Assets\Characters\Behaviour\Scripts\PlayerController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -117,7 +118,6 @@
     <Compile Include="Assets\Characters\Behaviour\Scripts\CharacterTargeting.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Gameplay\EnemyWave\Scripts\EnemyMultiWave.cs" />
-    <Compile Include="Assets\Gameplay\WeaponsCanvas\SwordCanvas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

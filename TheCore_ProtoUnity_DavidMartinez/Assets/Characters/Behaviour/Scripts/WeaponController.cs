@@ -60,9 +60,12 @@ public class WeaponController : MonoBehaviour
 
     public void Shoot()
     {
-        fireWeapons[selectedWeaponIndex].Shoot();
-        onShoot.Invoke();
-        pistolRig.weight = 1.0f;
+        if (Time.time - fireWeapons[selectedWeaponIndex].lastShotTime > fireWeapons[selectedWeaponIndex].coolDownBetweenShots)
+        {
+            fireWeapons[selectedWeaponIndex].Shoot();
+            onShoot.Invoke();
+            pistolRig.weight = 1.0f;
+        }
     }
 
     public void StartShooting()

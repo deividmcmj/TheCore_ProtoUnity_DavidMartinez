@@ -14,12 +14,15 @@ public abstract class FireWeaponBase : WeaponBase
     [SerializeField] public UseMode useMode;
     [SerializeField] public RuntimeAnimatorController animatorForWeapon;
     [SerializeField] protected Transform shootPoint;
+    [SerializeField] public float coolDownBetweenShots;
 
     [Header("Debug")]
     [SerializeField] bool debugShoot;
     [SerializeField] bool debugStartShooting;
     [SerializeField] bool debugStopShooting;
     [SerializeField] bool debugReload;
+
+    public float lastShotTime;
 
     void OnValidate()
     {
