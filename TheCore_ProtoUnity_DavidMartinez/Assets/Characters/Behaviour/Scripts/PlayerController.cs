@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
@@ -16,18 +17,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField] InputAction moveRight;
     [SerializeField] InputAction run;
     [SerializeField] InputAction shoot;
+    [SerializeField] InputAction swing;
     [SerializeField] InputAction nextWeapon;
     [SerializeField] InputAction previousWeapon;
+
+    [Header("Weapon info")]
+    [SerializeField] int maxUses = 3;
+    [SerializeField] float swordUsesChargeTime = 5.0f;
+
+    public UnityEvent<int, int> onUseSword;
 
     CharacterController characterController;
     float velocityMultiplier = 0.5f;
     float verticalSpeed = 0.0f;
     float gravity = -9.81f;
+    float lastSwordUseTime;
     Camera mainCamera;
-    bool performSingleAttack = false;
+    bool performSingleFireAttack = false;
     bool oldPerformContinuousAttack = false;
     bool performContinuousAttack = false;
+    bool performMeleeAttack = false;
     WeaponController weaponController;
+    int uses;
 
     void OnEnable()
     {
@@ -37,6 +48,7 @@ public class PlayerController : MonoBehaviour
         moveRight.Enable();
         run.Enable();
         shoot.Enable();
+        swing.Enable();
         nextWeapon.Enable();
         previousWeapon.Enable();
     }
@@ -49,6 +61,7 @@ public class PlayerController : MonoBehaviour
         moveRight.Disable();
         run.Disable();
         shoot.Disable();
+        swing.Disable();
         nextWeapon.Disable();
         previousWeapon.Disable();
     }
@@ -62,7 +75,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lastSwordUseTime = 0.0f;
         mainCamera = Camera.main;
+        uses = maxUses;
     }
 
     // Update is called once per frame
@@ -75,6 +90,12 @@ public class PlayerController : MonoBehaviour
         UpdateWeaponUse();
 
         UpdateWeaponChange();
+
+        if (Time.time - lastSwordUseTime > swordUsesChargeTime)
+        {
+            uses = maxUses;
+            onUseSword.Invoke(uses, maxUses);
+        }
     }
 
     Vector3 ReadInputs()
@@ -100,7 +121,8 @@ public class PlayerController : MonoBehaviour
         }
         localMovement.Normalize();
 
-        performSingleAttack = shoot.triggered;
+        performSingleFireAttack = shoot.triggered;
+        performMeleeAttack = swing.triggered;
         performContinuousAttack = shoot.IsPressed();
 
         return localMovement;
@@ -127,21 +149,26 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateWeaponUse()
     {
-        if (performSingleAttack)
+        if (performSingleFireAttack && weaponController.GetCurrentWeaponUseMode() == FireWeaponBase.UseMode.Shot)
         {
-            performSingleAttack = false;
-            switch (weaponController.GetCurrentWeaponUseMode())
-            {
-                case WeaponBase.UseMode.Shot:
-                    weaponController?.Shoot();
-                    break;
-                case WeaponBase.UseMode.Swing:
-                    weaponController?.Swing();
-                    break;
-            }
+            performSingleFireAttack = false;
+            weaponController?.Shoot();
         }
 
-        if (weaponController.GetCurrentWeaponUseMode() == WeaponBase.UseMode.ContinuousShot && oldPerformContinuousAttack != performContinuousAttack)
+        if (performMeleeAttack && uses > 0)
+        {
+            performMeleeAttack = false;
+            weaponController?.Swing();
+            uses--;
+            onUseSword.Invoke(uses, maxUses);
+            lastSwordUseTime = Time.time;
+        }
+        else
+        {
+            performMeleeAttack = false;
+        }
+
+        if (weaponController.GetCurrentWeaponUseMode() == FireWeaponBase.UseMode.ContinuousShot && oldPerformContinuousAttack != performContinuousAttack)
         {
             if (performContinuousAttack)
             {

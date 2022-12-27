@@ -13,11 +13,12 @@ public class WeaponController : MonoBehaviour
 
     [SerializeField] Rig pistolRig;
 
-    WeaponBase[] weapons;
+    FireWeaponBase[] fireWeapons;
+    MeleeWeaponBase meleeWeapon;
     int selectedWeaponIndex;
 
     public UnityEvent onShoot, onSwing;
-    public UnityEvent<WeaponBase> onChangeWeapon;
+    public UnityEvent<FireWeaponBase> onChangeWeapon;
 
     void OnValidate()
     {
@@ -41,12 +42,14 @@ public class WeaponController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        weapons = GetComponentsInChildren<WeaponBase>();
-        foreach (WeaponBase w in weapons)
+        fireWeapons = GetComponentsInChildren<FireWeaponBase>();
+        foreach (FireWeaponBase w in fireWeapons)
         {
             w.gameObject.SetActive(false);
         }
         SelectWeapon(0);
+
+        meleeWeapon = GetComponentInChildren<MeleeWeaponBase>();
     }
 
     // Update is called once per frame
@@ -57,34 +60,38 @@ public class WeaponController : MonoBehaviour
 
     public void Shoot()
     {
-        ((FireWeaponBase)weapons[selectedWeaponIndex]).Shoot();
+        fireWeapons[selectedWeaponIndex].Shoot();
         onShoot.Invoke();
+        pistolRig.weight = 1.0f;
     }
 
     public void StartShooting()
     {
-        ((FireWeaponBase)weapons[selectedWeaponIndex]).StartShooting();
+        fireWeapons[selectedWeaponIndex].StartShooting();
     }
 
     public void StopShooting()
     {
-        ((FireWeaponBase)weapons[selectedWeaponIndex]).StopShooting();
+        fireWeapons[selectedWeaponIndex].StopShooting();
     }
 
     public void Swing()
     {
-        ((MeleeWeaponBase)weapons[selectedWeaponIndex]).Swing();
+        meleeWeapon.Swing();
         onSwing.Invoke();
+        pistolRig.weight = 0.0f;
     }
 
     public void OnSwingDamageStart()
     {
-        ((MeleeWeaponBase)weapons[selectedWeaponIndex]).SwingDamageStart();
+        meleeWeapon.SwingDamageStart();
+        pistolRig.weight = 0.0f;
     }
 
     public void OnSwingDamageEnd()
     {
-        ((MeleeWeaponBase)weapons[selectedWeaponIndex]).SwingDamageEnd();
+        meleeWeapon.SwingDamageEnd();
+        pistolRig.weight = 1.0f;
     }
 
     public void SelectNextWeapon()
@@ -99,25 +106,25 @@ public class WeaponController : MonoBehaviour
 
     public void SelectWeapon(int index)
     {
-        weapons[selectedWeaponIndex].gameObject.SetActive(false);
+        fireWeapons[selectedWeaponIndex].gameObject.SetActive(false);
 
         selectedWeaponIndex = index;
-        if (selectedWeaponIndex >= weapons.Length)
+        if (selectedWeaponIndex >= fireWeapons.Length)
         {
             selectedWeaponIndex = 0;
         }
         if (selectedWeaponIndex < 0)
         {
-            selectedWeaponIndex = weapons.Length - 1;
+            selectedWeaponIndex = fireWeapons.Length - 1;
         }
 
-        weapons[selectedWeaponIndex].gameObject.SetActive(true);
+        fireWeapons[selectedWeaponIndex].gameObject.SetActive(true);
 
-        onChangeWeapon.Invoke(weapons[selectedWeaponIndex]);
+        onChangeWeapon.Invoke(fireWeapons[selectedWeaponIndex]);
     }
 
-    public WeaponBase.UseMode GetCurrentWeaponUseMode()
+    public FireWeaponBase.UseMode GetCurrentWeaponUseMode()
     {
-        return weapons[selectedWeaponIndex].useMode;
+        return fireWeapons[selectedWeaponIndex].useMode;
     }
 }

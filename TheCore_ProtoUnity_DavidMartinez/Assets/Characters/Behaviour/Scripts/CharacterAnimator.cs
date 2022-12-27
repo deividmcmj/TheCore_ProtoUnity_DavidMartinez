@@ -9,18 +9,15 @@ public class CharacterAnimator : MonoBehaviour
 
     Animator animator;
     Vector3 oldPosition;
-    CharacterController characterController;
-    NavMeshAgent navMeshAgent;
 
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        characterController = GetComponentInChildren<CharacterController>();
-        navMeshAgent = GetComponent<NavMeshAgent>();
         WeaponController weaponController = GetComponentInChildren<WeaponController>();
         if (weaponController)
         {
             weaponController.onShoot.AddListener(OnShoot);
+            weaponController.onSwing.AddListener(OnSwing);
             weaponController.onChangeWeapon.AddListener(OnChangeWeapon);
         }
         oldPosition = transform.position;
@@ -49,7 +46,12 @@ public class CharacterAnimator : MonoBehaviour
         animator.SetTrigger("Shoot");
     }
 
-    void OnChangeWeapon(WeaponBase weapon)
+    void OnSwing()
+    {
+        animator.SetTrigger("Swing");
+    }
+
+    void OnChangeWeapon(FireWeaponBase weapon)
     {
         animator.runtimeAnimatorController = weapon.animatorForWeapon;
     }

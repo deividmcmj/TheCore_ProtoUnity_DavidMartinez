@@ -4,7 +4,15 @@ using UnityEngine;
 
 public abstract class FireWeaponBase : WeaponBase
 {
+    public enum UseMode
+    {
+        Shot,
+        ContinuousShot
+    }
+
     [Header("Weapon info")]
+    [SerializeField] public UseMode useMode;
+    [SerializeField] public RuntimeAnimatorController animatorForWeapon;
     [SerializeField] protected Transform shootPoint;
 
     [Header("Debug")]

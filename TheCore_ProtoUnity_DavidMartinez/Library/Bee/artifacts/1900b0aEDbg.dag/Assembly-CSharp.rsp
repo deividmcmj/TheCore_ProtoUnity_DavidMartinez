@@ -387,6 +387,7 @@
 "Assets/Gameplay/EnemyWave/Scripts/EnemyMultiWave.cs"
 "Assets/Gameplay/EnemyWave/Scripts/EnemyWave.cs"
 "Assets/Gameplay/GameOver/Scripts/GameOver.cs"
+"Assets/Gameplay/WeaponsCanvas/SwordCanvas.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"

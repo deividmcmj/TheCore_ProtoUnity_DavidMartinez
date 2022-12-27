@@ -117,6 +117,7 @@
     <Compile Include="Assets\Characters\Behaviour\Scripts\CharacterTargeting.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Gameplay\EnemyWave\Scripts\EnemyMultiWave.cs" />
+    <Compile Include="Assets\Gameplay\WeaponsCanvas\SwordCanvas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

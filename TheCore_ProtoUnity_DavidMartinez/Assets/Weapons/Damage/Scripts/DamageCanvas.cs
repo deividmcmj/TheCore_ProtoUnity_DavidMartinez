@@ -11,8 +11,6 @@ public class DamageCanvas : MonoBehaviour
     [SerializeField] Image lifeBar;
     [SerializeField] TMP_Text lifeText;
 
-    public Color colorTo;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +22,12 @@ public class DamageCanvas : MonoBehaviour
     public void OnChangeLifeBarNormalized(float newLifeNormalized)
     {
         lifeBar.DOFillAmount(newLifeNormalized, 1.0f);
+        lifeBar.color = Color.Lerp(Color.red, Color.green, newLifeNormalized);
     }
 
     public void OnChangeLifeText(float newLife, float maxLife)
     {
         lifeText.text = newLife + "/" + maxLife;
+        lifeText.color = Color.Lerp(Color.red, Color.green, newLife / maxLife);
     }
 }
