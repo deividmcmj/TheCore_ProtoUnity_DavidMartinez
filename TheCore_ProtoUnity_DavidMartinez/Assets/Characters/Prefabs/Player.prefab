@@ -960,6 +960,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3316573418755020167}
     m_Modifications:
+    - target: {fileID: -3248922011437602123, guid: 34d2332be328e804d9eef3ea616602c4,
+        type: 3}
+      propertyPath: relativeRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3248922011437602123, guid: 34d2332be328e804d9eef3ea616602c4,
+        type: 3}
+      propertyPath: relativeRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3248922011437602123, guid: 34d2332be328e804d9eef3ea616602c4,
+        type: 3}
+      propertyPath: relativeRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3248922011437602123, guid: 34d2332be328e804d9eef3ea616602c4,
+        type: 3}
+      propertyPath: relativeRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3248922011437602123, guid: 34d2332be328e804d9eef3ea616602c4,
+        type: 3}
+      propertyPath: transformToCopyFrom
+      value: 
+      objectReference: {fileID: 3007939034710895810}
     - target: {fileID: 7511537280446314616, guid: 34d2332be328e804d9eef3ea616602c4,
         type: 3}
       propertyPath: m_Name
@@ -1055,6 +1080,31 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7804401496809755138, guid: e5ae24f141a9c6e49bd9af09f509e9d1,
+        type: 3}
+      propertyPath: relativeRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804401496809755138, guid: e5ae24f141a9c6e49bd9af09f509e9d1,
+        type: 3}
+      propertyPath: relativeRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804401496809755138, guid: e5ae24f141a9c6e49bd9af09f509e9d1,
+        type: 3}
+      propertyPath: relativeRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804401496809755138, guid: e5ae24f141a9c6e49bd9af09f509e9d1,
+        type: 3}
+      propertyPath: relativeRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804401496809755138, guid: e5ae24f141a9c6e49bd9af09f509e9d1,
+        type: 3}
+      propertyPath: transformToCopyFrom
+      value: 
+      objectReference: {fileID: 3007939034710895810}
     - target: {fileID: 8701685503882041741, guid: e5ae24f141a9c6e49bd9af09f509e9d1,
         type: 3}
       propertyPath: m_Name
@@ -1200,6 +1250,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Escopeta
       objectReference: {fileID: 0}
+    - target: {fileID: 8979250459209984616, guid: 63c1844cf734aa645969e7903b48a72e,
+        type: 3}
+      propertyPath: relativeRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979250459209984616, guid: 63c1844cf734aa645969e7903b48a72e,
+        type: 3}
+      propertyPath: relativeRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979250459209984616, guid: 63c1844cf734aa645969e7903b48a72e,
+        type: 3}
+      propertyPath: relativeRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979250459209984616, guid: 63c1844cf734aa645969e7903b48a72e,
+        type: 3}
+      propertyPath: relativeRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979250459209984616, guid: 63c1844cf734aa645969e7903b48a72e,
+        type: 3}
+      propertyPath: transformToCopyFrom
+      value: 
+      objectReference: {fileID: 3007939034710895810}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63c1844cf734aa645969e7903b48a72e, type: 3}
 --- !u!4 &7996600913943960920 stripped

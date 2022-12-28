@@ -9,5 +9,8 @@ public class FireWeaponByInstantiation : FireWeaponBase
     public override void Shoot()
     {
         Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+        canShoot.text = "No";
+        canShoot.color = Color.red;
+        lastShotTime = Time.time;
     }
 }

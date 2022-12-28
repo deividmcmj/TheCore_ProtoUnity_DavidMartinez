@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 233492079929541692}
   - component: {fileID: 3006060313418419815}
+  - component: {fileID: 8979250459209984616}
   m_Layer: 0
   m_Name: Escopeta
   m_TagString: Untagged
@@ -63,6 +64,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967219
   shardsPerShot: 10
+--- !u!114 &8979250459209984616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233492079929541693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2782707e0fe2352468e50145e5577d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformToCopyFrom: {fileID: 0}
+  localRelativePosition: {x: 0, y: 0, z: 0}
+  relativeRotation: {x: 0.47003642, y: -0.5106944, z: 0.5374809, w: 0.47892714}
 --- !u!1 &7712731484633366748
 GameObject:
   m_ObjectHideFlags: 0

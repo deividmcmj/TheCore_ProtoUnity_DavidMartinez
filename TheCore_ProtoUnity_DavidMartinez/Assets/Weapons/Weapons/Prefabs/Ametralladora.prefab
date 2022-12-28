@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8701685503882041746}
   - component: {fileID: 5078753621436814588}
+  - component: {fileID: 7804401496809755138}
   m_Layer: 0
   m_Name: Ametralladora
   m_TagString: Untagged
@@ -49,10 +50,12 @@ MonoBehaviour:
   useMode: 1
   animatorForWeapon: {fileID: 9100000, guid: 4d785e109d6d1a94ead879d816cd1b13, type: 2}
   shootPoint: {fileID: 507658798864220608}
+  coolDownBetweenShots: 0
   debugShoot: 0
   debugStartShooting: 0
   debugStopShooting: 0
   debugReload: 0
+  lastShotTime: 0
   maxHorizontalSpreadAngle: 0
   maxVerticalSpreadAngle: 0
   damage: 1
@@ -61,6 +64,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967219
   cadence: 5
+--- !u!114 &7804401496809755138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8701685503882041741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2782707e0fe2352468e50145e5577d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformToCopyFrom: {fileID: 0}
+  localRelativePosition: {x: 0, y: 0, z: 0}
+  relativeRotation: {x: 0.47003642, y: -0.5106944, z: 0.5374809, w: 0.47892714}
 --- !u!1 &8794123459092381335
 GameObject:
   m_ObjectHideFlags: 0

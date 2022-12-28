@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7511537280446314617}
   - component: {fileID: -8380712610584534714}
+  - component: {fileID: -3248922011437602123}
   m_Layer: 0
   m_Name: Lanzagranadas
   m_TagString: Untagged
@@ -57,6 +58,21 @@ MonoBehaviour:
   lastShotTime: 0
   projectilePrefab: {fileID: 2359309650611255297, guid: 14641fa0ac311a74599f438eb80bc107,
     type: 3}
+--- !u!114 &-3248922011437602123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511537280446314616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2782707e0fe2352468e50145e5577d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformToCopyFrom: {fileID: 0}
+  localRelativePosition: {x: 0, y: 0, z: 0}
+  relativeRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8844851156655766381
 GameObject:
   m_ObjectHideFlags: 0

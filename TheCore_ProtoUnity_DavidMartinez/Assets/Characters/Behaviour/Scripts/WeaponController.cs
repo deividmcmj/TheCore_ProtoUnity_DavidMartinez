@@ -46,6 +46,7 @@ public class WeaponController : MonoBehaviour
         foreach (FireWeaponBase w in fireWeapons)
         {
             w.gameObject.SetActive(false);
+            w.weaponCanvas.SetActive(false);
         }
         SelectWeapon(0);
 
@@ -55,7 +56,11 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time.time - fireWeapons[selectedWeaponIndex].lastShotTime > fireWeapons[selectedWeaponIndex].coolDownBetweenShots)
+        {
+            fireWeapons[selectedWeaponIndex].canShoot.text = "Yes";
+            fireWeapons[selectedWeaponIndex].canShoot.color = Color.green;
+        }
     }
 
     public void Shoot()
@@ -110,6 +115,7 @@ public class WeaponController : MonoBehaviour
     public void SelectWeapon(int index)
     {
         fireWeapons[selectedWeaponIndex].gameObject.SetActive(false);
+        fireWeapons[selectedWeaponIndex].weaponCanvas.SetActive(false);
 
         selectedWeaponIndex = index;
         if (selectedWeaponIndex >= fireWeapons.Length)
@@ -122,6 +128,7 @@ public class WeaponController : MonoBehaviour
         }
 
         fireWeapons[selectedWeaponIndex].gameObject.SetActive(true);
+        fireWeapons[selectedWeaponIndex].weaponCanvas.SetActive(true);
 
         onChangeWeapon.Invoke(fireWeapons[selectedWeaponIndex]);
     }

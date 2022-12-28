@@ -13,6 +13,8 @@ public class FireWeaponByRaycastMultishot : FireWeaponByRaycast
             base.Shoot();
         }
 
+        canShoot.text = "No";
+        canShoot.color = Color.red;
         lastShotTime = Time.time;
     }
 }
