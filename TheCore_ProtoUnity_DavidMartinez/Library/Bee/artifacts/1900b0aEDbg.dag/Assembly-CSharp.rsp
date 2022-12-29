@@ -424,6 +424,7 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 "Assets/Utils/Transform Copy/Scripts/TransformCopy.cs"
+"Assets/Utils/UI/UI.cs"
 "Assets/Weapons/Damage/Scripts/DamageableWithLife.cs"
 "Assets/Weapons/Damage/Scripts/DamageCanvas.cs"
 "Assets/Weapons/Damage/Scripts/IDamageable.cs"

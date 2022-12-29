@@ -23,6 +23,6 @@ public class GameOver : MonoBehaviour
 
     public void OnDeath()
     {
-        canvasGroup.DOFade(1.0f, 5.0f);
+        FindObjectOfType<UI>().ChangeScene("Death Scene");
     }
 }
